@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-cc -lm bounce.c -o BouncingBall
+cc bounce.c -o BouncingBall
