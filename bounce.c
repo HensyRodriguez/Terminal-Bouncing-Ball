@@ -4,8 +4,8 @@
 #include <math.h>
 #include <signal.h>
 
-#define HEIGHT 40
-#define WIDTH 100
+#define HEIGHT 26
+#define WIDTH 80
 
 struct circle_t {
     double x, y, r;
@@ -14,7 +14,7 @@ struct circle_t {
 
 void clear_screen()
 {
-    printf("\x1b[2J");
+    printf("\x1b[2J\x1b[H");
 }
 
 void animation(struct circle_t *circle)
@@ -42,7 +42,7 @@ void animation(struct circle_t *circle)
 
 void on_sig(int signum)
 {
-    printf("\x1b[H");
+    printf("\x1b[2J\x1b[H");
     printf("\x1b[?25h");
 
     printf("\nDetected signum: %d\n", signum);
